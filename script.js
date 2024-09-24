@@ -15,9 +15,29 @@ function getComputerChoice(){
         
 }
 console.log(getComputerChoice())
+// funct humanchoice
+// while choice != rock or paper or scissor
+// choice = prompt invalid answer, please use one of the options
+// return choice
 
 function getHumanChoice(){
-    let choice = prompt("Chose: rock, paper or scissor");
+    let ask = prompt("Chose rock, paper or scissors");
+    let choice = ask.toLowerCase();  
+    if (choice === "rock"||choice ==="scissors"|| choice==="paper"){
+        
+        return choice;
+      
+    }else{
+        while(choice !== "rock"||"scissors"||"paper"){
+            choice = prompt("Select a valid option").toLowerCase();
+                if (choice === "rock" || choice === "scissors" || choice === "paper"){
+                    break;
+                }else{
+                    continue;
+                }
+            }
+    }
     return choice
+       
 }
 console.log (getHumanChoice())
