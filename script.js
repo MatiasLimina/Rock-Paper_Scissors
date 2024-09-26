@@ -44,3 +44,25 @@ function getHumanChoice(){
        
 }
 console.log (getHumanChoice())
+
+function playRound (humanChoice,computerChoice){
+    
+    switch (humanChoice){
+         
+        case "paper": if (computerChoice === "paper"){
+                        console.log("It´s a draw!");
+                        break;                    
+                    } else if (computerChoice === "rock"){
+                        console.log ("You win!");
+                        break;
+                    }else if (computerChoice === "scissors"){
+                        console.log ("You lose!");
+                        break;
+                    }
+                    
+
+
+    }
+    
+
+}
