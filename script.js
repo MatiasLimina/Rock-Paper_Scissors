@@ -5,13 +5,13 @@ function getComputerChoice(){
     let num = Math.floor(Math.random() * 3)+1;
     let choice = ""
     if(num === 1 ){
-         choice = "Scissors";
+         choice = "scissors";
     }
     else if(num === 2){
-         choice = "Rock";
+         choice = "rock";
     }
     else if (num === 3) {
-         choice = "Paper";
+         choice = "paper";
     }
     return choice
         
@@ -47,44 +47,70 @@ function getHumanChoice(){
 
 function playRound (humanChoice,computerChoice){
     
-    switch (humanChoice){
+    if (humanChoice === "paper"){
+        
+        if (computerChoice === "paper"){
+            console.log("It´s a draw!");
+
+        } else if (computerChoice === "rock"){
+            console.log ("You win!");
+
+        }else if (computerChoice === "scissors"){
+            console.log ("You lose!");
+        }
+
+    }else if (humanChoice === "rock"){
+        
+        if (computerChoice === "paper"){
+            console.log("You lose!"); 
+                       
+        }else if (computerChoice === "rock"){
+            console.log ("It´s a draw!");
+
+        }else if (computerChoice === "scissors"){
+            console.log ("You win!");
+        }
+
+    }else if(humanChoice === "scissors"){
+        
+        if (computerChoice === "paper"){
+            console.log("You win!");
+                                    
+        }else if (computerChoice === "rock"){
+            console.log ("You lose!");
+                           
+        }else if (computerChoice === "scissors"){
+            console.log ("It´s a draw!");
+                          
+        } 
+    }
          
-        case "paper": if (computerChoice === "paper"){
-                        console.log("It´s a draw!");
-                        break;                    
-                    } else if (computerChoice === "rock"){
-                        console.log ("You win!");
-                        break;
-                    }else if (computerChoice === "scissors"){
-                        console.log ("You lose!");
-                        break;
-                    }
-        case "rock": if (computerChoice === "paper"){
-                        console.log("You lose!");
-                        break;                    
-                    }else if (computerChoice === "rock"){
-                        console.log ("It´s a draw!");
-                        break;
-                    }else if (computerChoice === "scissors"){
-                        console.log ("You win!");
-                        break;
-                    }
-        case "scissors": if (computerChoice === "paper"){
-                            console.log("You win!");
-                            break;                    
-                        }else if (computerChoice === "rock"){
-                            console.log ("You lose!");
-                            break;
-                        }else if (computerChoice === "scissors"){
-                            console.log ("It´s a draw!");
-                            break;
-                        }  
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+         
 
     }
     
 
-}
+
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection,computerSelection));
+playRound(humanSelection,computerSelection);
