@@ -17,7 +17,7 @@ function getComputerChoice(){
         
         
 }
-console.log(getComputerChoice())
+// console.log(getComputerChoice())
 // funct humanchoice
 // while choice != rock or paper or scissor
 // choice = prompt invalid answer, please use one of the options
@@ -43,7 +43,7 @@ function getHumanChoice(){
     return choice
        
 }
-console.log (getHumanChoice())
+// console.log (getHumanChoice())
 
 function playRound (humanChoice,computerChoice){
     
@@ -69,11 +69,22 @@ function playRound (humanChoice,computerChoice){
                         console.log ("You win!");
                         break;
                     }
-
-                    
-
+        case "scissors": if (computerChoice === "paper"){
+                            console.log("You win!");
+                            break;                    
+                        }else if (computerChoice === "rock"){
+                            console.log ("You lose!");
+                            break;
+                        }else if (computerChoice === "scissors"){
+                            console.log ("It´s a draw!");
+                            break;
+                        }  
 
     }
     
 
 }
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection,computerSelection));
