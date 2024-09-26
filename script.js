@@ -59,6 +59,17 @@ function playRound (humanChoice,computerChoice){
                         console.log ("You lose!");
                         break;
                     }
+        case "rock": if (computerChoice === "paper"){
+                        console.log("You lose!");
+                        break;                    
+                    }else if (computerChoice === "rock"){
+                        console.log ("It´s a draw!");
+                        break;
+                    }else if (computerChoice === "scissors"){
+                        console.log ("You win!");
+                        break;
+                    }
+
                     
 
 
