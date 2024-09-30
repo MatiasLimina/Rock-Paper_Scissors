@@ -92,9 +92,13 @@ function playRound (humanChoice,computerChoice){
 
 // playRound(humanSelection,computerSelection);
 
-function playGame (humanSelection, computerSelection){
+function playGame (){
+    
     let i = 0;
-    for (i=0; i<4; i++){
-        console.log(playGame(humanSelection,computerSelection))
+    for (i=0; i<5; i++){
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection,computerSelection)
     }
 }
+playGame()
