@@ -46,41 +46,61 @@ function getHumanChoice(){
 // console.log (getHumanChoice())
 
 function playRound (humanChoice,computerChoice){
-    
+    let result = ""
     if (humanChoice === "paper"){
         
         if (computerChoice === "paper"){
-            console.log("It´s a draw!");
+            result = "It´s a draw!";
+            console.log(result);
+            return result;
+            
 
         } else if (computerChoice === "rock"){
-            console.log ("You win!");
+            result = "You win!";
+            console.log(result);
+            return result;
+            
 
         }else if (computerChoice === "scissors"){
-            console.log ("You lose!");
+            result = "You lose!";
+            console.log(result);
+            return result;
         }
 
     }else if (humanChoice === "rock"){
         
         if (computerChoice === "paper"){
-            console.log("You lose!"); 
+            result ="You lose!";
+            console.log(result);
+            return result; 
                        
         }else if (computerChoice === "rock"){
-            console.log ("It´s a draw!");
+            result = "It´s a draw!";
+            console.log(result);
+            return result;
 
         }else if (computerChoice === "scissors"){
-            console.log ("You win!");
+            result = "You win!";
+            console.log(result);
+            return result;
         }
 
     }else if(humanChoice === "scissors"){
         
         if (computerChoice === "paper"){
-            console.log("You win!");
+            result = "You win!";
+            console.log(result);
+            return result;
                                     
         }else if (computerChoice === "rock"){
-            console.log ("You lose!");
+            result = "You lose!"
+            console.log(result);
+            return result;
                            
         }else if (computerChoice === "scissors"){
-            console.log ("It´s a draw!");
+            result = "It´s a draw!";
+            console.log(result);
+            return result
                           
         } 
     }
@@ -99,6 +119,7 @@ function playGame (){
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
         playRound(humanSelection,computerSelection)
+
     }
 }
 playGame()
