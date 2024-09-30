@@ -85,32 +85,16 @@ function playRound (humanChoice,computerChoice){
         } 
     }
          
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-         
+}
 
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
+
+// playRound(humanSelection,computerSelection);
+
+function playGame (humanSelection, computerSelection){
+    let i = 0;
+    for (i=0; i<4; i++){
+        console.log(playGame(humanSelection,computerSelection))
     }
-    
-
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection,computerSelection);
+}
