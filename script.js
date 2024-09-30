@@ -1,5 +1,5 @@
 let humanScore = 0;
-let computerChoice = 0;
+let computerScore = 0;
 
 function getComputerChoice(){
     let num = Math.floor(Math.random() * 3)+1;
@@ -118,8 +118,17 @@ function playGame (){
     for (i=0; i<5; i++){
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
-        playRound(humanSelection,computerSelection)
+        let score = playRound(humanSelection,computerSelection);
 
+        if (score === "You win!" ){
+            humanScore ++;
+            console.log(humanScore,"-",computerScore);
+        }else if (score === "You lose!"){
+            computerScore++;
+            console.log(humanScore,"-",computerScore);
+        }else if (score === "It´s a draw!"){
+            console.log(humanScore,"-",computerScore)
+        }
     }
 }
 playGame()
