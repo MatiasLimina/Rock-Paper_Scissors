@@ -130,5 +130,10 @@ function playGame (){
             console.log(humanScore,"-",computerScore)
         }
     }
+    if (humanScore > computerScore){
+        console.log ("You win the whole game!");
+    }else{
+        console.log ("You lose the gmae to the computer :c");
+    }
 }
 playGame()
