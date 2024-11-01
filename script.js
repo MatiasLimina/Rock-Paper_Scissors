@@ -107,33 +107,38 @@ function playRound (humanChoice,computerChoice){
          
 }
 
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
 // playRound(humanSelection,computerSelection);
 
-function playGame (){
+// function playGame (){
     
-    let i = 0;
-    for (i=0; i<5; i++){
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        let score = playRound(humanSelection,computerSelection);
+//     let i = 0;
+//     for (i=0; i<5; i++){
+//         let humanSelection = getHumanChoice();
+//         let computerSelection = getComputerChoice();
+//         let score = playRound(humanSelection,computerSelection);
 
-        if (score === "You win!" ){
-            humanScore ++;
-            console.log(humanScore,"-",computerScore);
-        }else if (score === "You lose!"){
-            computerScore++;
-            console.log(humanScore,"-",computerScore);
-        }else if (score === "It´s a draw!"){
-            console.log(humanScore,"-",computerScore)
-        }
-    }
-    if (humanScore > computerScore){
-        console.log ("You win the whole game!");
-    }else{
-        console.log ("You lose the gmae to the computer :c");
-    }
-}
-playGame()
+//         if (score === "You win!" ){
+//             humanScore ++;
+//             console.log(humanScore,"-",computerScore);
+//         }else if (score === "You lose!"){
+//             computerScore++;
+//             console.log(humanScore,"-",computerScore);
+//         }else if (score === "It´s a draw!"){
+//             console.log(humanScore,"-",computerScore)
+//         }
+//     }
+//     if (humanScore > computerScore){
+//         console.log ("You win the whole game!");
+//     }else{
+//         console.log ("You lose the gmae to the computer :c");
+//     }
+// }
+// playGame()
+const btnScissors = document.querySelector("#scissors");
+const btnPaper = document.querySelector("#paper");
+const btnRock = document.querySelector("#rock");
+
+
