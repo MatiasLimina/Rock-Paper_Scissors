@@ -17,24 +17,8 @@ function getComputerChoice(){
         
         
 }
-// console.log(getComputerChoice())
-// funct humanchoice
-// while choice != rock or paper or scissor
-// choice = prompt invalid answer, please use one of the options
-// return choice
 
-function getHumanChoice(){
-    const selection = document.querySelectorAll("button")
 
-    selection.forEach((button) => 
-        button.addEventListener("click",() =>{
-            return button.id;
-        })
-    )
-    
-       
-}
-// console.log (getHumanChoice())
 
 function playRound (humanChoice,computerChoice){
     let result = ""
@@ -98,9 +82,6 @@ function playRound (humanChoice,computerChoice){
          
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 // playRound(humanSelection,computerSelection);
 
 // function playGame (){
@@ -128,8 +109,14 @@ const computerSelection = getComputerChoice();
 //     }
 // }
 // playGame()
-const btnScissors = document.querySelector("#scissors");
-const btnPaper = document.querySelector("#paper");
-const btnRock = document.querySelector("#rock");
 
 
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+ 
+  button.addEventListener("click", () => {
+    playRound(button.id,getComputerChoice());
+  });
+});
