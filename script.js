@@ -24,23 +24,14 @@ function getComputerChoice(){
 // return choice
 
 function getHumanChoice(){
-    let ask = prompt("Chose rock, paper or scissors");
-    let choice = ask.toLowerCase();  
-    if (choice === "rock"||choice ==="scissors"|| choice==="paper"){
-        
-        return choice;
-      
-    }else{
-        while(choice !== "rock"||"scissors"||"paper"){
-            choice = prompt("Select a valid option").toLowerCase();
-                if (choice === "rock" || choice === "scissors" || choice === "paper"){
-                    break;
-                }else{
-                    continue;
-                }
-            }
-    }
-    return choice
+    const selection = document.querySelectorAll("button")
+
+    selection.forEach((button) => 
+        button.addEventListener("click",() =>{
+            return button.id;
+        })
+    )
+    
        
 }
 // console.log (getHumanChoice())
