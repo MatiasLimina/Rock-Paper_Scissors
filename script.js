@@ -33,12 +33,16 @@ function playRound (humanChoice,computerChoice){
         } else if (computerChoice === "rock"){
             result = "You win!";
             console.log(result);
+            humanScore++;
+            console.log(humanScore,"-",computerScore);
             return result;
             
 
         }else if (computerChoice === "scissors"){
             result = "You lose!";
             console.log(result);
+            computerScore++;
+            console.log(humanScore,"-",computerScore);
             return result;
         }
 
@@ -47,6 +51,8 @@ function playRound (humanChoice,computerChoice){
         if (computerChoice === "paper"){
             result ="You lose!";
             console.log(result);
+            computerScore++;
+            console.log(humanScore,"-",computerScore);
             return result; 
                        
         }else if (computerChoice === "rock"){
@@ -57,6 +63,8 @@ function playRound (humanChoice,computerChoice){
         }else if (computerChoice === "scissors"){
             result = "You win!";
             console.log(result);
+            humanScore++;
+            console.log(humanScore,"-",computerScore);
             return result;
         }
 
@@ -65,11 +73,15 @@ function playRound (humanChoice,computerChoice){
         if (computerChoice === "paper"){
             result = "You win!";
             console.log(result);
+            humanScore++;
+            console.log(humanScore,"-",computerScore);
             return result;
                                     
         }else if (computerChoice === "rock"){
             result = "You lose!"
             console.log(result);
+            computerScore++;
+            console.log(humanScore,"-",computerScore);
             return result;
                            
         }else if (computerChoice === "scissors"){
@@ -117,9 +129,16 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
  
   button.addEventListener("click", () => {
+    if (humanScore < 5 && computerScore < 5){
+        playRound(button.id,getComputerChoice());
 
+    }else if(humanScore === 5) {
+        console.log("You win the whole game!");
+    }else if (computerScore === 5){
+        console.log ("You lose the whole game!");
+    }
 
-
-    playRound(button.id,getComputerChoice());
-  });
+    
+    
+    });
 });
