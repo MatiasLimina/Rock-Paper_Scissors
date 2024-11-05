@@ -26,23 +26,24 @@ function playRound (humanChoice,computerChoice){
         
         if (computerChoice === "paper"){
             result = "It´s a draw!";
-            console.log(result);
+            msg.textContent=(result);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result;
             
 
         } else if (computerChoice === "rock"){
             result = "You win!";
-            console.log(result);
+            msg.textContent=(result);
             humanScore++;
-            console.log(humanScore,"-",computerScore);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result;
             
 
         }else if (computerChoice === "scissors"){
             result = "You lose!";
-            console.log(result);
+            msg.textContent=(result);
             computerScore++;
-            console.log(humanScore,"-",computerScore);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result;
         }
 
@@ -50,21 +51,22 @@ function playRound (humanChoice,computerChoice){
         
         if (computerChoice === "paper"){
             result ="You lose!";
-            console.log(result);
+            msg.textContent=(result);
             computerScore++;
-            console.log(humanScore,"-",computerScore);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result; 
                        
         }else if (computerChoice === "rock"){
             result = "It´s a draw!";
-            console.log(result);
+            msg.textContent=(result);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result;
 
         }else if (computerChoice === "scissors"){
             result = "You win!";
-            console.log(result);
+            msg.textContent=(result);
             humanScore++;
-            console.log(humanScore,"-",computerScore);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result;
         }
 
@@ -72,57 +74,28 @@ function playRound (humanChoice,computerChoice){
         
         if (computerChoice === "paper"){
             result = "You win!";
-            console.log(result);
+            msg.textContent=(result);
             humanScore++;
-            console.log(humanScore,"-",computerScore);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result;
                                     
         }else if (computerChoice === "rock"){
             result = "You lose!"
-            console.log(result);
+            msg.textContent=(result);
             computerScore++;
-            console.log(humanScore,"-",computerScore);
+            scr.textContent=(humanScore + " - "+ computerScore);
             return result;
                            
         }else if (computerChoice === "scissors"){
             result = "It´s a draw!";
-            console.log(result);
+            msg.textContent=(result);
+            scr.textContent=(humanScore,computerScore);
             return result
                           
         } 
     }
          
 }
-
-// playRound(humanSelection,computerSelection);
-
-// function playGame (){
-    
-//     let i = 0;
-//     for (i=0; i<5; i++){
-//         let humanSelection = getHumanChoice();
-//         let computerSelection = getComputerChoice();
-//         let score = playRound(humanSelection,computerSelection);
-
-//         if (score === "You win!" ){
-//             humanScore ++;
-//             console.log(humanScore,"-",computerScore);
-//         }else if (score === "You lose!"){
-//             computerScore++;
-//             console.log(humanScore,"-",computerScore);
-//         }else if (score === "It´s a draw!"){
-//             console.log(humanScore,"-",computerScore)
-//         }
-//     }
-//     if (humanScore > computerScore){
-//         console.log ("You win the whole game!");
-//     }else{
-//         console.log ("You lose the gmae to the computer :c");
-//     }
-// }
-// playGame()
-
-
 
 const buttons = document.querySelectorAll("button");
 
@@ -133,12 +106,17 @@ buttons.forEach((button) => {
         playRound(button.id,getComputerChoice());
 
     }else if(humanScore === 5) {
-        console.log("You win the whole game!");
+        msg.textContent=("You win the whole game!");
     }else if (computerScore === 5){
-        console.log ("You lose the whole game!");
+        msg.textContent= ("You lose the whole game!");
     }
 
     
     
     });
 });
+const body = document.querySelector("body");
+const msg = document.createElement("div");
+const scr = document.createElement("div");
+body.appendChild(msg);
+body.appendChild(scr);
